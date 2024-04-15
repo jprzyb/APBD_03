@@ -3,19 +3,19 @@ using APBD_03.Repositories;
 
 namespace APBD_03.Services;
 
-public class AnimalService
+public class AnimalService : IAnimalService
 {
-    private readonly IAnimalService _animalRepository;
+    private readonly IAnimalRepository _animalRepository;
     
     public AnimalService(IAnimalRepository animalRepository)
     {
         _animalRepository = animalRepository;
     }
     
-    public IEnumerable<Animal> GetAnimal()
+    public IEnumerable<Animal> GetAnimals()
     {
         //Business logic
-        return _animalRepository.GetAnimal();
+        return _animalRepository.GetAnimals();
     }
     
     public int CreateAnimal(Animal animal)

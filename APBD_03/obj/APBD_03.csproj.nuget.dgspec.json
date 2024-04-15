@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\s24512\\Desktop\\asdffas\\APBD_03\\APBD_03\\APBD_03.csproj": {}
+    "C:\\Users\\ASRock\\OneDrive\\Pulpit\\Repositories\\APBD_03\\APBD_03\\APBD_03.csproj": {}
   },
   "projects": {
-    "C:\\Users\\s24512\\Desktop\\asdffas\\APBD_03\\APBD_03\\APBD_03.csproj": {
+    "C:\\Users\\ASRock\\OneDrive\\Pulpit\\Repositories\\APBD_03\\APBD_03\\APBD_03.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\s24512\\Desktop\\asdffas\\APBD_03\\APBD_03\\APBD_03.csproj",
+        "projectUniqueName": "C:\\Users\\ASRock\\OneDrive\\Pulpit\\Repositories\\APBD_03\\APBD_03\\APBD_03.csproj",
         "projectName": "APBD_03",
-        "projectPath": "C:\\Users\\s24512\\Desktop\\asdffas\\APBD_03\\APBD_03\\APBD_03.csproj",
-        "packagesPath": "C:\\Users\\s24512\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\s24512\\Desktop\\asdffas\\APBD_03\\APBD_03\\obj\\",
+        "projectPath": "C:\\Users\\ASRock\\OneDrive\\Pulpit\\Repositories\\APBD_03\\APBD_03\\APBD_03.csproj",
+        "packagesPath": "C:\\Users\\ASRock\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ASRock\\OneDrive\\Pulpit\\Repositories\\APBD_03\\APBD_03\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\s24512\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\ASRock\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -52,6 +45,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.6, )"
             }
           },
           "imports": [
@@ -73,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

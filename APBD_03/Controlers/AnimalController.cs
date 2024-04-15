@@ -1,4 +1,5 @@
-﻿using APBD_03.Services;
+﻿using APBD_03.Model;
+using APBD_03.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace APBD_03.Controlers;
@@ -21,9 +22,62 @@ public class AnimalController : ControllerBase
     [HttpGet]
     public IActionResult GetAnimals()
     {
-        var students = _animalService.GetAnimals();
-        return Ok(students);
+        var animals = _animalService.GetAnimals();
+        return Ok(animals);
     }
     
+    /// <summary>
+    /// Endpoint used to return a single student.
+    /// </summary>
+    /// <param name="id">Id of a student</param>
+    /// <returns>Student</returns>
+    [HttpGet("{id:int}")]
+    public IActionResult GetAnimal(int id)
+    {
+        var animal = _animalService.GetAnimal(id);
+
+        if (animal==null)
+        {
+            return NotFound("Animal not found");
+        }
+        
+        return Ok(animal);
+    }
     
+    /// <summary>
+    /// Endpoint used to create a student.
+    /// </summary>
+    /// <param name="student">New student data</param>
+    /// <returns>201 Created</returns>
+    [HttpPost]
+    public IActionResult CreateAnimal(Animal animal)
+    {
+        var affectedCount = _animalService.CreateAnimal(animal);
+        return StatusCode(StatusCodes.Status201Created);
+    }
+    
+    /// <summary>
+    /// Endpoint used to update a student.
+    /// </summary>
+    /// <param name="id">Id of a student</param>
+    /// <param name="student">204 No Content</param>
+    /// <returns></returns>
+    [HttpPut("{id:int}")]
+    public IActionResult UpdateAnimal(int id, Animal animal)
+    {
+        var affectedCount = _animalService.UpdateAnimal(animal);
+        return NoContent();
+    }
+    
+    /// <summary>
+    /// Endpoint used to delete a student.
+    /// </summary>
+    /// <param name="id">Id of a student</param>
+    /// <returns>204 No Content</returns>
+    [HttpDelete("{id:int}")]
+    public IActionResult DeleteAnimal(int id)
+    {
+        var affectedCount = _animalService.DeleteAnimal(id);
+        return NoContent();
+    }
 }
