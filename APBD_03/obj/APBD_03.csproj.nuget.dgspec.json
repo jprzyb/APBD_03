@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ASRock\\OneDrive\\Pulpit\\Repositories\\APBD_03\\APBD_03\\APBD_03.csproj": {}
+    "C:\\Users\\jakub\\Desktop\\PJATK\\APBD_03\\APBD_03\\APBD_03.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ASRock\\OneDrive\\Pulpit\\Repositories\\APBD_03\\APBD_03\\APBD_03.csproj": {
+    "C:\\Users\\jakub\\Desktop\\PJATK\\APBD_03\\APBD_03\\APBD_03.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASRock\\OneDrive\\Pulpit\\Repositories\\APBD_03\\APBD_03\\APBD_03.csproj",
+        "projectUniqueName": "C:\\Users\\jakub\\Desktop\\PJATK\\APBD_03\\APBD_03\\APBD_03.csproj",
         "projectName": "APBD_03",
-        "projectPath": "C:\\Users\\ASRock\\OneDrive\\Pulpit\\Repositories\\APBD_03\\APBD_03\\APBD_03.csproj",
-        "packagesPath": "C:\\Users\\ASRock\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASRock\\OneDrive\\Pulpit\\Repositories\\APBD_03\\APBD_03\\obj\\",
+        "projectPath": "C:\\Users\\jakub\\Desktop\\PJATK\\APBD_03\\APBD_03\\APBD_03.csproj",
+        "packagesPath": "C:\\Users\\jakub\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jakub\\Desktop\\PJATK\\APBD_03\\APBD_03\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ASRock\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\jakub\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -70,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\jakub\\.dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
