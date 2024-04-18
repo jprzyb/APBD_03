@@ -27,10 +27,10 @@ public class AnimalController : ControllerBase
     }
     
     /// <summary>
-    /// Endpoint used to return a single student.
+    /// Endpoint used to return a single animal.
     /// </summary>
-    /// <param name="id">Id of a student</param>
-    /// <returns>Student</returns>
+    /// <param name="id">Id of a animal</param>
+    /// <returns>Animal</returns>
     [HttpGet("{id:int}")]
     public IActionResult GetAnimal(int id)
     {
@@ -45,9 +45,9 @@ public class AnimalController : ControllerBase
     }
     
     /// <summary>
-    /// Endpoint used to create a student.
+    /// Endpoint used to create a animal.
     /// </summary>
-    /// <param name="student">New student data</param>
+    /// <param name="animal">New animal data</param>
     /// <returns>201 Created</returns>
     [HttpPost]
     public IActionResult CreateAnimal(Animal animal)
@@ -57,10 +57,10 @@ public class AnimalController : ControllerBase
     }
     
     /// <summary>
-    /// Endpoint used to update a student.
+    /// Endpoint used to update a animal.
     /// </summary>
-    /// <param name="id">Id of a student</param>
-    /// <param name="student">204 No Content</param>
+    /// <param name="id">Id of a animal</param>
+    /// <param name="animal">204 No Content</param>
     /// <returns></returns>
     [HttpPut("{id:int}")]
     public IActionResult UpdateAnimal(int id, Animal animal)
@@ -70,9 +70,9 @@ public class AnimalController : ControllerBase
     }
     
     /// <summary>
-    /// Endpoint used to delete a student.
+    /// Endpoint used to delete a animal.
     /// </summary>
-    /// <param name="id">Id of a student</param>
+    /// <param name="id">Id of a animal</param>
     /// <returns>204 No Content</returns>
     [HttpDelete("{id:int}")]
     public IActionResult DeleteAnimal(int id)

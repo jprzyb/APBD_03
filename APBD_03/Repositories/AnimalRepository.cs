@@ -1,4 +1,4 @@
-﻿using System.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 using APBD_03.Model;
 
 namespace APBD_03.Repositories;
@@ -14,7 +14,18 @@ public class AnimalRepository : IAnimalRepository
     
     public IEnumerable<Animal> GetAnimals()
     {
-        using var con = new SqlConnection(_configuration["ConnectionStrings:DefaultConnection"]);
+        
+        string strProject = "KUBUS"; // Wprowadź nazwę instancji serwera SQL
+        string strDatabase = "Animals"; // Wprowadź nazwę bazy danych
+        string strUserID = "user_two"; // Wprowadź nazwę użytkownika SQL Server
+        string strPassword = "aaaa"; // Wprowadź hasło użytkownika SQL Server
+        string strconn = "data source=" + strProject +
+                         ";Persist Security Info=false;database=" + strDatabase +
+                         ";user id=" + strUserID + ";password=" +
+                         strPassword +
+                         ";Connection Timeout = 0;trustServerCertificate=true;";
+        using var con = new SqlConnection(strconn);
+        
         con.Open();
         
         using var cmd = new SqlCommand();
@@ -41,7 +52,16 @@ public class AnimalRepository : IAnimalRepository
 
     public Animal GetAnimal(int idAnimal)
     {
-        using var con = new SqlConnection(_configuration["ConnectionStrings:DefaultConnection"]);
+        string strProject = "KUBUS"; // Wprowadź nazwę instancji serwera SQL
+        string strDatabase = "Animals"; // Wprowadź nazwę bazy danych
+        string strUserID = "user_two"; // Wprowadź nazwę użytkownika SQL Server
+        string strPassword = "aaaa"; // Wprowadź hasło użytkownika SQL Server
+        string strconn = "data source=" + strProject +
+                         ";Persist Security Info=false;database=" + strDatabase +
+                         ";user id=" + strUserID + ";password=" +
+                         strPassword +
+                         ";Connection Timeout = 0;trustServerCertificate=true;";
+        using var con = new SqlConnection(strconn);
         con.Open();
         
         using var cmd = new SqlCommand();
@@ -72,7 +92,16 @@ public class AnimalRepository : IAnimalRepository
 
     public int CreateAnimal(Animal animal)
     {
-        using var con = new SqlConnection(_configuration["ConnectionStrings:DefaultConnection"]);
+        string strProject = "KUBUS"; // Wprowadź nazwę instancji serwera SQL
+        string strDatabase = "Animals"; // Wprowadź nazwę bazy danych
+        string strUserID = "user_two"; // Wprowadź nazwę użytkownika SQL Server
+        string strPassword = "aaaa"; // Wprowadź hasło użytkownika SQL Server
+        string strconn = "data source=" + strProject +
+                         ";Persist Security Info=false;database=" + strDatabase +
+                         ";user id=" + strUserID + ";password=" +
+                         strPassword +
+                         ";Connection Timeout = 0;trustServerCertificate=true;";
+        using var con = new SqlConnection(strconn);
         con.Open();
         
         using var cmd = new SqlCommand();
@@ -91,7 +120,16 @@ public class AnimalRepository : IAnimalRepository
     
     public int DeleteAnimal(int id)
     {
-        using var con = new SqlConnection(_configuration["ConnectionStrings:DefaultConnection"]);
+        string strProject = "KUBUS"; // Wprowadź nazwę instancji serwera SQL
+        string strDatabase = "Animals"; // Wprowadź nazwę bazy danych
+        string strUserID = "user_two"; // Wprowadź nazwę użytkownika SQL Server
+        string strPassword = "aaaa"; // Wprowadź hasło użytkownika SQL Server
+        string strconn = "data source=" + strProject +
+                         ";Persist Security Info=false;database=" + strDatabase +
+                         ";user id=" + strUserID + ";password=" +
+                         strPassword +
+                         ";Connection Timeout = 0;trustServerCertificate=true;";
+        using var con = new SqlConnection(strconn);
         con.Open();
         
         using var cmd = new SqlCommand();
@@ -105,7 +143,16 @@ public class AnimalRepository : IAnimalRepository
 
     public int UpdateAnimal(Animal animal)
     {
-        using var con = new SqlConnection(_configuration["ConnectionStrings:DefaultConnection"]);
+        string strProject = "KUBUS"; // Wprowadź nazwę instancji serwera SQL
+        string strDatabase = "Animals"; // Wprowadź nazwę bazy danych
+        string strUserID = "user_two"; // Wprowadź nazwę użytkownika SQL Server
+        string strPassword = "aaaa"; // Wprowadź hasło użytkownika SQL Server
+        string strconn = "data source=" + strProject +
+                         ";Persist Security Info=false;database=" + strDatabase +
+                         ";user id=" + strUserID + ";password=" +
+                         strPassword +
+                         ";Connection Timeout = 0;trustServerCertificate=true;";
+        using var con = new SqlConnection(strconn);
         con.Open();
         
         using var cmd = new SqlCommand();
