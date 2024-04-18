@@ -6,31 +6,31 @@ namespace APBD_03.Repositories;
 public class AnimalRepository : IAnimalRepository
 {
     private IConfiguration _configuration;
+    private string _connectionString;
     
     public AnimalRepository(IConfiguration configuration)
     {
         _configuration = configuration;
-    }
-    
-    public IEnumerable<Animal> GetAnimals()
-    {
-        
         string strProject = "KUBUS"; // Wprowadź nazwę instancji serwera SQL
         string strDatabase = "Animals"; // Wprowadź nazwę bazy danych
         string strUserID = "user_two"; // Wprowadź nazwę użytkownika SQL Server
         string strPassword = "aaaa"; // Wprowadź hasło użytkownika SQL Server
-        string strconn = "data source=" + strProject +
-                         ";Persist Security Info=false;database=" + strDatabase +
-                         ";user id=" + strUserID + ";password=" +
-                         strPassword +
-                         ";Connection Timeout = 0;trustServerCertificate=true;";
-        using var con = new SqlConnection(strconn);
+        _connectionString = "data source=" + strProject +
+                                   ";Persist Security Info=false;database=" + strDatabase +
+                                   ";user id=" + strUserID + ";password=" +
+                                   strPassword +
+                                   ";Connection Timeout = 0;trustServerCertificate=true;";
+    }
+    
+    public IEnumerable<Animal> GetAnimals()
+    {
+        using var con = new SqlConnection(_connectionString);
         
         con.Open();
         
         using var cmd = new SqlCommand();
         cmd.Connection = con;
-        cmd.CommandText = "SELECT IdAnimal, Name, Description, Category, Area FROM Animal ORDER BY Name";
+        cmd.CommandText = "SELECT IdAnimal, Name, Description, Category, Area FROM Animals ORDER BY Name";
         
         var dr = cmd.ExecuteReader();
         var animals = new List<Animal>();
@@ -52,21 +52,12 @@ public class AnimalRepository : IAnimalRepository
 
     public Animal GetAnimal(int idAnimal)
     {
-        string strProject = "KUBUS"; // Wprowadź nazwę instancji serwera SQL
-        string strDatabase = "Animals"; // Wprowadź nazwę bazy danych
-        string strUserID = "user_two"; // Wprowadź nazwę użytkownika SQL Server
-        string strPassword = "aaaa"; // Wprowadź hasło użytkownika SQL Server
-        string strconn = "data source=" + strProject +
-                         ";Persist Security Info=false;database=" + strDatabase +
-                         ";user id=" + strUserID + ";password=" +
-                         strPassword +
-                         ";Connection Timeout = 0;trustServerCertificate=true;";
-        using var con = new SqlConnection(strconn);
+        using var con = new SqlConnection(_connectionString);
         con.Open();
         
         using var cmd = new SqlCommand();
         cmd.Connection = con;
-        cmd.CommandText = "SELECT IdAnimal, Name, Description, Category, Area FROM Animal WHERE IdAnimal = @IdAnimal";
+        cmd.CommandText = "SELECT IdAnimal, Name, Description, Category, Area FROM Animals WHERE IdAnimal = @IdAnimal";
         cmd.Parameters.AddWithValue("@IdAnimal", idAnimal);
         
         var dr = cmd.ExecuteReader();
@@ -92,21 +83,12 @@ public class AnimalRepository : IAnimalRepository
 
     public int CreateAnimal(Animal animal)
     {
-        string strProject = "KUBUS"; // Wprowadź nazwę instancji serwera SQL
-        string strDatabase = "Animals"; // Wprowadź nazwę bazy danych
-        string strUserID = "user_two"; // Wprowadź nazwę użytkownika SQL Server
-        string strPassword = "aaaa"; // Wprowadź hasło użytkownika SQL Server
-        string strconn = "data source=" + strProject +
-                         ";Persist Security Info=false;database=" + strDatabase +
-                         ";user id=" + strUserID + ";password=" +
-                         strPassword +
-                         ";Connection Timeout = 0;trustServerCertificate=true;";
-        using var con = new SqlConnection(strconn);
+        using var con = new SqlConnection(_connectionString);
         con.Open();
         
         using var cmd = new SqlCommand();
         cmd.Connection = con;
-        cmd.CommandText = "INSERT INTO Animal(IdAnimal, Name, Description, Category, Area) VALUES(@Name, @Description, @Category, @Area)";
+        cmd.CommandText = "INSERT INTO Animals(IdAnimal, Name, Description, Category, Area) VALUES(@IdAnimal, @Name, @Description, @Category, @Area)";
         cmd.Parameters.AddWithValue("@IdAnimal", animal.IdAnimal);
         cmd.Parameters.AddWithValue("@Name", animal.Name);
         cmd.Parameters.AddWithValue("@Description", animal.Description);
@@ -120,21 +102,12 @@ public class AnimalRepository : IAnimalRepository
     
     public int DeleteAnimal(int id)
     {
-        string strProject = "KUBUS"; // Wprowadź nazwę instancji serwera SQL
-        string strDatabase = "Animals"; // Wprowadź nazwę bazy danych
-        string strUserID = "user_two"; // Wprowadź nazwę użytkownika SQL Server
-        string strPassword = "aaaa"; // Wprowadź hasło użytkownika SQL Server
-        string strconn = "data source=" + strProject +
-                         ";Persist Security Info=false;database=" + strDatabase +
-                         ";user id=" + strUserID + ";password=" +
-                         strPassword +
-                         ";Connection Timeout = 0;trustServerCertificate=true;";
-        using var con = new SqlConnection(strconn);
+        using var con = new SqlConnection(_connectionString);
         con.Open();
         
         using var cmd = new SqlCommand();
         cmd.Connection = con;
-        cmd.CommandText = "DELETE FROM Animal WHERE IdAnimal = @IdAnimal";
+        cmd.CommandText = "DELETE FROM Animals WHERE IdAnimal = @IdAnimal";
         cmd.Parameters.AddWithValue("@IdAnimal", id);
         
         var affectedCount = cmd.ExecuteNonQuery();
@@ -143,21 +116,12 @@ public class AnimalRepository : IAnimalRepository
 
     public int UpdateAnimal(Animal animal)
     {
-        string strProject = "KUBUS"; // Wprowadź nazwę instancji serwera SQL
-        string strDatabase = "Animals"; // Wprowadź nazwę bazy danych
-        string strUserID = "user_two"; // Wprowadź nazwę użytkownika SQL Server
-        string strPassword = "aaaa"; // Wprowadź hasło użytkownika SQL Server
-        string strconn = "data source=" + strProject +
-                         ";Persist Security Info=false;database=" + strDatabase +
-                         ";user id=" + strUserID + ";password=" +
-                         strPassword +
-                         ";Connection Timeout = 0;trustServerCertificate=true;";
-        using var con = new SqlConnection(strconn);
+        using var con = new SqlConnection(_connectionString);
         con.Open();
         
         using var cmd = new SqlCommand();
         cmd.Connection = con;
-        cmd.CommandText = "UPDATE Animal SET Name=@Name, Description=@Description, Category=@Category, Area=@Area WHERE IdAnimal = @IdAnimal";
+        cmd.CommandText = "UPDATE Animals SET Name=@Name, Description=@Description, Category=@Category, Area=@Area WHERE IdAnimal = @IdAnimal";
         cmd.Parameters.AddWithValue("@IdAnimal", animal.IdAnimal);
         cmd.Parameters.AddWithValue("@Name", animal.Name);
         cmd.Parameters.AddWithValue("@Description", animal.Description);
