@@ -76,11 +76,6 @@ public class AnimalRepository : IAnimalRepository
         return animal;
     }
 
-    public IEnumerable<Animal> GetAnimal()
-    {
-        throw new NotImplementedException();
-    }
-
     public int CreateAnimal(Animal animal)
     {
         using var con = new SqlConnection(_connectionString);

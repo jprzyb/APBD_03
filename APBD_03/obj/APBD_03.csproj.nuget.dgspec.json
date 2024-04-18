@@ -50,6 +50,10 @@
               "target": "Package",
               "version": "[9.0.0-preview.3.24172.4, )"
             },
+            "Microsoft.EntityFrameworkCore.Analyzers": {
+              "target": "Package",
+              "version": "[9.0.0-preview.3.24172.4, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
